@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+component client
+component order
+database orders
+queue kafka
+
+
+package "Ext services" {
+    component airport
+    component taxi
+    component hotel
+}
+
+client <--> order
+order <-> orders
+order <--> kafka
+kafka <--> airport
+kafka <--> taxi
+kafka <--> hotel
+
+@enduml

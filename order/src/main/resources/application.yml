@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    bootstrap-servers: "localhost:29092"
+
+app:
+  kafka:
+    order-topic: order
+    result-topic: order-response
+    notify-topic: notify
+logging:
+  level:
+    org.apache.kafka: off
