@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+component order
+database orders
+queue kafka
+
+
+package "Ext services" {
+    component airport
+}
+
+order <-> orders
+order <-- kafka : order-response
+kafka <-- airport : PENDING/ERROR
+
+@enduml
