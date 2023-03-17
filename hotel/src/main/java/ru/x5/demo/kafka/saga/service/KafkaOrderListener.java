@@ -89,7 +89,7 @@ public class KafkaOrderListener {
     }
 
     private void approve(Integer orderId, Acknowledgment acknowledgment) {
-        log.info("Отменяем заказ {}", orderId);
+        log.info("Одобряем заказ {}", orderId);
         hotelRoomService.approveRoom(orderId);
         acknowledgment.acknowledge();
     }
